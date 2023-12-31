@@ -10,7 +10,9 @@ nvm use # will use .nvmrc
 
 ```shell
 npm install
-npm run build 
+npm run start # dev server
+npm run build  # production build
+npm run lint
 ```
 
 # Reasoning Behind Technology Choices
@@ -25,7 +27,7 @@ New Node.js versions are released every 6 months. We want to use the latest LTS 
 Yarn was the first to introduce a usable lock file and workspaces but NPM has quickly caught up. At the time of writing, the only meaningful difference is that Yarn has “Plug ‘n Play.” (PnP) mode that eliminates `node_modules`. Unfortunately, upon close inspection, it doesn’t quite live up to its name, “Plug ‘n Play.” Executing `yarn init -2` will create many files and directories, all of which must be committed. Furthermore, a VSCode plugin is required to browse the compressed package store and additional patches are needed to make TypeScript work. In contrast, running `npm init` results in one file: `package.json`.
 
 ## Pick a Language
-The default language of the web is, obviously, JavaScript. It has improved over the years, however, it's still dynamically typed. Dynamic typing simplifies onboarding, however, as the application grows, maintainability becomes relevant. Quality assurance becomes harder, because type errors can only be caught at runtime. This template is meant to be scalable, therefore, it uses TypeScript.
+The default language of the web is, obviously, JavaScript. It has improved over the years, however, it's still dynamically typed. Dynamic typing simplifies onboarding, however, as the application grows, maintainability becomes relevant. Quality assurance becomes harder, because type errors can only be caught at runtime. This template is meant to be scalable, therefore, it uses [TypeScript](https://www.typescriptlang.org/).
 
 TypeScript requires a compiler. The official Microsoft compiler is called `tsc` can be used. It is used for type checking during development, however, the bundler of choice doesn't use it, because of performance reasons.
 
