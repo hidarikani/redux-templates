@@ -29,6 +29,8 @@ The default language of the web is, obviously, JavaScript. It has improved over 
 
 TypeScript requires a compiler. The official Microsoft compiler is called `tsc` can be used. It is used for type checking during development, however, the bundler of choice doesn't use it, because of performance reasons.
 
+TypeScript requires type definitions for third party libraries. These are specified in `package.json` under the `@types/` namespace.
+
 ## Pick a Linter
 Common code quality issues are extensively documented and can be solved with a linter. The most popular linter for JavaScript is ESLint. ESLint is also the recommended way to lint TypeScript. To enable TS support [a plugin](https://typescript-eslint.io/) must be installed. The plugin has two modes: type-aware and type-ignorant. On one hand, the type-aware mode is more accurate, on the other hand, it is slower. This template prioritizes code quality, therefore, the type-aware mode is used.
 
