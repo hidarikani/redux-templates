@@ -23,6 +23,14 @@ To enable real time code linting and formatting while coding, this template reco
 ## Configure Node
 New Node.js versions are released every 6 months. We want to use the latest LTS version. We also want to use the latest npm version. The best way, to manage Node versions on Mac OS and Linux is by installing Node Version Manager (nvm). It even has a convenient configuration file `.nvmrc` to avoid typing the desired version every time.
 
+VSCode uses external Node.js runtime to execute some plugins. Two things can be done to ensure correct version. First, set default version for new terminal windows:
+
+```shell
+nvm alias default 20 # aka lts/iron
+```
+
+Second, set the version by creating a [launch config](.vscode/launch.json)
+
 ## Pick a Package Manager
 Yarn was the first to introduce a usable lock file and workspaces but NPM has quickly caught up. At the time of writing, the only meaningful difference is that Yarn has “Plug ‘n Play.” (PnP) mode that eliminates `node_modules`. Unfortunately, upon close inspection, it doesn’t quite live up to its name, “Plug ‘n Play.” Executing `yarn init -2` will create many files and directories, all of which must be committed. Furthermore, a VSCode plugin is required to browse the compressed package store and additional patches are needed to make TypeScript work. In contrast, running `npm init` results in one file: `package.json`.
 
