@@ -52,7 +52,7 @@ export function Counter() {
         </button>
         <button
           className={styles.asyncButton}
-          onClick={() => dispatch(incrementAsync(incrementValue))}
+          onClick={() => {void dispatch(incrementAsync(incrementValue))}}
         >
           Add Async
         </button>
