@@ -132,11 +132,15 @@ and Redux Toolkit, simply because, the author feels most comfortable around
 these technologies.
 
 ## Pick A Graphical User Interface
-Adobe's Spectrum design system and components are used. There are several
-reasons:
-- The components are open-source and free
-- The components are accessible
-- The components are implemented in React
+Adobe's
+[React Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html)
+component library is used for several reasons. Spectrum components are
+- open-source and free,
+- accessible,
+- React based,
+- TypeScript ready.
+
+
 
 For additional customization and layout options, predefined CSS classes from
 Tailwind are used.
