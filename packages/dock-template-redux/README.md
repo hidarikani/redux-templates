@@ -85,8 +85,23 @@ modes: type-aware and type-ignorant. On one hand, the type-aware mode is more
 accurate, on the other hand, it is slower. This template prioritizes code
 quality, therefore, the type-aware mode is used.
 
+The whole project can be linted manually by running `npm run lint`. The command
+will also fix some issues automatically.
+
 # Pick a Formatter
-TBD
+At the time of writing, the most popular code formatter for JavaScript is
+Prettier. According to its maintainers, it was designed to be opinionated.
+In practice it means its users must accept an intentionally limited
+configuration. The philosophy of this template is that formatting details, like 
+number of spaces, don't matter as much consistency. That's why the default
+options are used by omitting the configuration file.
+
+Don not confuse linting and formatting. ESlint is mainly used to identify code
+quality issues, while Prettier is used to enforce code style. The two tools can
+clash, because ESLint does include some formatting rules. To avoid the overlap,
+Prettier provides an ESLint plugin, which disables ESLint's formatting rules.
+
+The source folder can be formatted by running `npm run format`.
 
 ## Enforce Code Quality
 This template runs linting and formatting on every commit, to ensure code issues
@@ -95,13 +110,7 @@ don't slip through. This is done in a pre-commit hook. A library called
 [additional plugin](https://www.npmjs.com/package/lint-staged) was installed to 
 filter out files that are not staged.
 
-The whole project can be linted manually by running `npm run lint`. The command
-will also fix some issues automatically.
-
-## Pick a Framework
-In this template, the framework is composed out several libraries: React, Redux,
-React Router, and Redux Toolkit, simply because, the author feels most
-comfortable with them.
+Prettier is ran after ESLint, because formatting invalid code is redundant.
 
 ## Pick a Bundler
 Remembering the Webpack days, the configuration file would become
@@ -114,3 +123,18 @@ use cases, without a configuration file, or plugins, including TypeScript, CSS,
 images, fonts, and more. As mentioned before it can transpile TypeScript to 
 JavaScript, without using Microsoft's `tsc`. It's own compiler is much faster,
 because it doesn't do type checking.
+
+## Pick a Framework
+Several libraries are composed to form a framework: React, React Router, Redux
+and Redux Toolkit, simply because, the author feels most comfortable around
+these technologies.
+
+## Pick A Graphical User Interface
+Adobe's Spectrum design system and components are used. There are several
+reasons:
+- The components are open-source and free
+- The components are accessible
+- The components are implemented in React
+
+For additional customization and layout options, predefined CSS classes from
+Tailwind are used.

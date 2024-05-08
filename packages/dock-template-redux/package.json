@@ -8,7 +8,8 @@
     "start": "parcel src/index.html",
     "build": "parcel build",
     "test": "jest",
-    "lint": "eslint --cache --fix --ext .json,.ts,.tsx  src"
+    "lint": "eslint --cache --fix --ext .json,.ts,.tsx  src",
+    "format": "prettier src --write"
   },
   "keywords": [
     "TypeScript",
@@ -45,10 +46,12 @@
     "husky": "^8.0.0",
     "lint-staged": "^15.2.0",
     "parcel": "^2.10.3",
+    "prettier": "3.2.5",
     "process": "^0.11.10",
     "typescript": "^5.3.3"
   },
   "lint-staged": {
-    "src/*.{json,ts,tsx}": "eslint --cache --fix"
+    "src*.{json,ts,tsx}": "eslint --cache --fix",
+    "src/*.{json,ts,tsx,css,md}": "prettier --write"
   }
 }
