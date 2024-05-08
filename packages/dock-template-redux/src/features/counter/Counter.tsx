@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ActionButton, TextField } from '@adobe/react-spectrum'
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import {
@@ -21,49 +22,43 @@ export function Counter() {
   return (
     <div>
       <div className={styles.row}>
-        <button
-          className={styles.button}
-          aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
+        <ActionButton
+          onPress={() => dispatch(decrement())}
         >
           -
-        </button>
-        <span className={styles.value}>{count}</span>
-        <button
+        </ActionButton>
+        <span>{count}</span>
+        <ActionButton
           className={styles.button}
           aria-label="Increment value"
           onClick={() => dispatch(increment())}
         >
           +
-        </button>
+        </ActionButton>
       </div>
       <div className={styles.row}>
-        <input
-          className={styles.textbox}
-          aria-label="Set increment amount"
+        <TextField
+          label="Increment amount"
           value={incrementAmount}
-          onChange={(e) => setIncrementAmount(e.target.value)}
+          onChange={setIncrementAmount}
         />
-        <button
-          className={styles.button}
-          onClick={() => dispatch(incrementByAmount(incrementValue))}
+        <ActionButton
+          onPress={() => dispatch(incrementByAmount(incrementValue))}
         >
           Add Amount
-        </button>
-        <button
-          className={styles.asyncButton}
-          onClick={() => {
+        </ActionButton>
+        <ActionButton
+          onPress={() => {
             void dispatch(incrementAsync(incrementValue));
           }}
         >
           Add Async
-        </button>
-        <button
-          className={styles.button}
-          onClick={() => dispatch(incrementIfOdd(incrementValue))}
+        </ActionButton>
+        <ActionButton
+          onPress={() => dispatch(incrementIfOdd(incrementValue))}
         >
           Add If Odd
-        </button>
+        </ActionButton>
       </div>
     </div>
   );
