@@ -10,7 +10,6 @@ import {
   incrementIfOdd,
   selectCount,
 } from './counterSlice';
-import * as styles from './Counter.module.css';
 
 export function Counter() {
   const count = useAppSelector(selectCount);
@@ -21,18 +20,17 @@ export function Counter() {
 
   return (
     <div>
-      <div className={styles.row}>
+      <div>
         <ActionButton onPress={() => dispatch(decrement())}>-</ActionButton>
         <span>{count}</span>
         <ActionButton
-          className={styles.button}
           aria-label="Increment value"
-          onClick={() => dispatch(increment())}
+          onPress={() => dispatch(increment())}
         >
           +
         </ActionButton>
       </div>
-      <div className={styles.row}>
+      <div>
         <TextField
           label="Increment amount"
           value={incrementAmount}
