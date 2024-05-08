@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ActionButton, TextField } from '@adobe/react-spectrum'
+import { ActionButton, TextField } from '@adobe/react-spectrum';
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import {
@@ -22,11 +22,7 @@ export function Counter() {
   return (
     <div>
       <div className={styles.row}>
-        <ActionButton
-          onPress={() => dispatch(decrement())}
-        >
-          -
-        </ActionButton>
+        <ActionButton onPress={() => dispatch(decrement())}>-</ActionButton>
         <span>{count}</span>
         <ActionButton
           className={styles.button}
@@ -54,9 +50,7 @@ export function Counter() {
         >
           Add Async
         </ActionButton>
-        <ActionButton
-          onPress={() => dispatch(incrementIfOdd(incrementValue))}
-        >
+        <ActionButton onPress={() => dispatch(incrementIfOdd(incrementValue))}>
           Add If Odd
         </ActionButton>
       </div>
