@@ -107,10 +107,12 @@ The source folder can be formatted by running `npm run format`.
 This template runs linting and formatting on every commit, to ensure code issues
 don't slip through. This is done in a pre-commit hook. A library called
 [Husky](https://typicode.github.io/husky) is used to manage the hooks. An 
-[additional plugin](https://www.npmjs.com/package/lint-staged) was installed to 
-filter out files that are not staged.
-
-Prettier is ran after ESLint, because formatting invalid code is redundant.
+additional plugin, called
+[lint-staged](https://www.npmjs.com/package/lint-staged), was installed 
+to filter out files that are not staged. `lint-staged` can run commands in
+parallel. This feature [was disabled](./.husky/pre-commit), because linting and 
+formatting must run in sequence. Finally execution order matters. Prettier is 
+ran after ESLint, because formatting potentially buggy code is redundant. 
 
 ## Pick a Bundler
 Remembering the Webpack days, the configuration file would become
