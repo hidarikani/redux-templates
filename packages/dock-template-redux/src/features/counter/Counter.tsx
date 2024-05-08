@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ActionButton, TextField } from '@adobe/react-spectrum';
+import { Heading, Form, ActionButton, Well, TextField } from '@adobe/react-spectrum';
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import {
@@ -19,18 +19,20 @@ export function Counter() {
   const incrementValue = Number(incrementAmount) || 0;
 
   return (
-    <div>
-      <div>
-        <ActionButton onPress={() => dispatch(decrement())}>-</ActionButton>
-        <span>{count}</span>
+    <>
+      <Heading level={1} id="label-counter">Counter Controlled By Redux</Heading>
+      <Well>Current counter value is {count}</Well>
+      <Form maxWidth="size-3600" aria-labelledby="label-counter">
+        <ActionButton onPress={() => dispatch(decrement())}>
+          Decrement Synchronous
+        </ActionButton>
         <ActionButton
           aria-label="Increment value"
           onPress={() => dispatch(increment())}
         >
-          +
+          Increment Synchronous
         </ActionButton>
-      </div>
-      <div>
+
         <TextField
           label="Increment amount"
           value={incrementAmount}
@@ -51,7 +53,7 @@ export function Counter() {
         <ActionButton onPress={() => dispatch(incrementIfOdd(incrementValue))}>
           Add If Odd
         </ActionButton>
-      </div>
-    </div>
+      </Form>
+    </>
   );
 }

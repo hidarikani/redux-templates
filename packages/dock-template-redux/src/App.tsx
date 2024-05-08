@@ -27,10 +27,10 @@ function App() {
       }}
       gap="size-100"
     >
-      <View backgroundColor="gray-200" gridArea="header">
+      <View backgroundColor="gray-200" gridArea="header" minHeight="size-1000">
         <img src={logo} className="App-logo" alt="logo" />
       </View>
-      <View backgroundColor="gray-200" gridArea="nav">
+      <View backgroundColor="gray-200" gridArea="nav" minHeight="size-1000">
         <Flex
           direction={{ base: 'row', M: 'column' }}
           gap="size-100"
@@ -53,7 +53,7 @@ function App() {
           />
         </Flex>
       </View>
-      <View  gridArea="content" height="size-4600">
+      <View gridArea="content" minHeight="size-1000">
         <Counter />
       </View>
       <View
@@ -65,7 +65,7 @@ function App() {
       <View
         backgroundColor="gray-200"
         gridArea="footer"
-        height="size-1000"
+        minHeight="size-1000"
       />
     </Grid>
   );
